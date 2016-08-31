@@ -1,4 +1,4 @@
-package sfeir.sds.petstore.springservice;
+package sfeir.sds.petstore.entities;
 
 
 import java.io.Serializable;
@@ -27,24 +27,14 @@ public class Pet implements Serializable {
 	private String category;
 	@Column
 	private String name;
-//	@Column
-//	private String[] photoUrl;
-//	@Column
-//	private String[] tags;
 	@Column
 	private String status;
-	
+
 	public int getId() {
 		return id;
 	}
 	public void setId(int id) {
 		this.id = id;
-	}
-	public String getCategory() {
-		return category;
-	}
-	public void setCategory(String category) {
-		this.category = category;
 	}
 	public String getName() {
 		return name;
@@ -52,22 +42,16 @@ public class Pet implements Serializable {
 	public void setName(String name) {
 		this.name = name;
 	}
-//	public String[] getPhotoUrl() {
-//		return photoUrl;
-//	}
-//	public void setPhotoUrl(String[] photoUrl) {
-//		this.photoUrl = photoUrl;
-//	}
-//	public String[] getTags() {
-//		return tags;
-//	}
-//	public void setTags(String[] tags) {
-//		this.tags = tags;
-//	}
 	public String getStatus() {
 		return status;
 	}
 	public void setStatus(String status) {
 		this.status = status;
+	}
+	public String getCategory() {
+		return category;
+	}
+	public void setCategory(String category) {
+		this.category = category;
 	}
 }

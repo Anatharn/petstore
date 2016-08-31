@@ -1,0 +1,16 @@
+<table class="table">
+	<tr ng-repeat="pet in pets">
+	<td >
+		<a href="#/pet-details/{{pet.id}}">details</a>
+	</td>
+	<td>
+		<span class="action-status">{{pet.name}}</span>
+	</td>
+	<td>
+		<span class="action-status">{{pet.category}}</span>
+	</td>
+	<td>
+		<a ng-click="deletePet( pet )">delete</a>
+	</td>
+	</tr>
+</table>

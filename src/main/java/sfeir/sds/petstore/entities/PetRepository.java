@@ -1,4 +1,4 @@
-package sfeir.sds.petstore.springservice;
+package sfeir.sds.petstore.entities;
 
 import java.util.List;
 

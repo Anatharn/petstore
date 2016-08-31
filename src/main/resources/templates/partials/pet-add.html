@@ -1,0 +1,28 @@
+<div id="add-pet-panel" class="fadein fadeout addpanel panel">
+		<div class="panel-heading">
+			<i class="panel-title-icon fa fa-plus"></i>
+			<span class="panel-title">Add Pet</span>
+		</div>
+		<div class="panel-body">
+			<div class="form-group" >
+				<label for="pet-name">Pet Name:</label>
+				<input type="text" id= "pet-name" class="form-control" ng-model="pet.name"/>
+			</div>
+			<div class="form-group" >
+				<label for="pet-status">Pet Status:</label>
+				<select id="pet-status" class="form-control" ng-model="pet.status" ng-options="status as status for status in statuses">
+				    <option value="">Select</option>						
+				</select>
+			</div>
+			<div class="form-group" >
+				<label for="pet-category">Pet Category:</label>
+				<select id="pet-category" class="form-control" ng-model="pet.category">
+				    <option value="">Select</option>
+				    <option ng-repeat="category in categories" value="{{category.label}}">{{category.label}}</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<button ng-click="savePet(pet)" class="btn btn-primary">Add New Pet</button>
+			</div>
+		</div>
+	</div>

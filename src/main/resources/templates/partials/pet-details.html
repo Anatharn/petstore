@@ -1,0 +1,23 @@
+<div id="pet-panel">
+	<div class="panel-heading">
+		<i class="panel-title-icon fa fa-plus"></i>
+		<span class="panel-title">Pet Details</span>
+	</div>
+	<div class="panel-body">
+		<div class="form-group" >
+			<label>Pet Name:</label>
+			<span>{{pet.name}}</span>
+		</div>
+		<div class="form-group" >
+			<label>Pet Status:</label>
+			<span>{{pet.status}}</span>
+		</div>
+		<div class="form-group" >
+			<label>Pet Category:</label>
+			<span>{{pet.category}}</span>
+		</div>
+		<div class="form-group">
+			<button ng-click="deletePet(pet)" class="btn btn-danger">Delete this Pet</button>
+		</div>
+	</div>
+</div>
