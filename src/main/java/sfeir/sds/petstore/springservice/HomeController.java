@@ -15,7 +15,11 @@ public class HomeController {
 	
 	@Autowired
 	PetRepository petRepository;
-
+	
+	@RequestMapping( value={ "/login" } )
+	public String login() {
+		return "login";
+	}
 	@RequestMapping( value={ "/home" } )
 	public String home() {
 		return "index";
@@ -36,7 +40,7 @@ public class HomeController {
 	public @ResponseBody void deletePetById(@PathVariable int id) {
 		this.petRepository.delete( id );
 	}
-	@RequestMapping(value = "/pets/{id}", method=RequestMethod.GET, produces={"application/json"})
+	@RequestMapping(value = "/pets/{id}", method=RequestMethod.GET, headers={"Accept=application/json"}, produces={"application/json"})
 	public @ResponseBody Pet findPetById(@PathVariable int id) {
 		return this.petRepository.findOne( id );
 	}

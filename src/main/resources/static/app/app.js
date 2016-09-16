@@ -25,7 +25,7 @@ app.factory("services", ['$http', function($http) {
     return obj;   
 }]);
 
-app.controller('listCtrl', function ($scope, $rootScope,  services, $location) {
+app.controller('listCtrl', function ($scope, $rootScope, services, $location, $interval) {
 	services.getPets().then(function(data){
 		if( typeof data.data._embedded != 'undefined')
 			$scope.pets = data.data._embedded.pets;
@@ -37,7 +37,10 @@ app.controller('listCtrl', function ($scope, $rootScope,  services, $location) {
         services.deletePet(pet).then(function(data){
         	$rootScope.alert_text = "Pet " + pet.name + " has been deleted";
         	$rootScope.alert_raised = true;
-        	$location.path('#/');        	
+        	$location.path('#/');
+        	$interval( function(){
+        		$rootScope.alert_raised = false;
+        	}, 2000);
         });
         
       };
@@ -58,7 +61,7 @@ app.controller('editCtrl', function ($scope, $rootScope, $location, $routeParams
         
 });
 
-app.controller('detailsCtrl', function ($scope, $rootScope, $location, $routeParams, services) {
+app.controller('detailsCtrl', function ($scope, $rootScope, $location, $routeParams, services, $interval) {
 	var id = $routeParams.param;
 	services.getPet(id).then( function ( data ) {
 		$scope.pet = data.data;
@@ -68,6 +71,10 @@ app.controller('detailsCtrl', function ($scope, $rootScope, $location, $routePar
         services.deletePet(pet).then(function(data){
         	$rootScope.alert_text = "Pet " + pet.name + " has been deleted";
         	$rootScope.alert_raised = true;
+        	$location.path('#/');
+        	$interval( function(){
+        		$rootScope.alert_raised = false;
+        	}, 2000);
         });
         
       };
