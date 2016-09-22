@@ -1,6 +1,7 @@
 package sfeir.sds.petstore.springservice;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -43,5 +44,9 @@ public class HomeController {
 	@RequestMapping(value = "/pets/{id}", method=RequestMethod.GET, headers={"Accept=application/json"}, produces={"application/json"})
 	public @ResponseBody Pet findPetById(@PathVariable int id) {
 		return this.petRepository.findOne( id );
+	}
+	@RequestMapping( value= "/currentuser" )
+	public @ResponseBody String getCurrentUserName( Authentication authentication ){
+		return authentication.getName();
 	}
 }
