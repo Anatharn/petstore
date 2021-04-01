@@ -16,6 +16,7 @@ import sfeir.sds.petstore.entities.Pet;
 
 /**
  * Ajout de commentaire pour tester
+ * Et un nouveau commentaire
  */
 @Configuration
 @ComponentScan
