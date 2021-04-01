@@ -14,6 +14,9 @@ import org.springframework.data.rest.webmvc.config.RepositoryRestMvcConfiguratio
 import sfeir.sds.petstore.entities.Category;
 import sfeir.sds.petstore.entities.Pet;
 
+/**
+ * Ajout de commentaire pour tester
+ */
 @Configuration
 @ComponentScan
 @EnableJpaRepositories
