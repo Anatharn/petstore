@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import sfeir.sds.petstore.entities.Pet;
 import sfeir.sds.petstore.entities.PetRepository;
 
+/**
+ * Controller for all the Home application
+ */
 @Controller
 public class HomeController {
 	
