@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 /**
- * Hotfix comments
+ * A category
  */
 @Entity
 @Table(name="category")
