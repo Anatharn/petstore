@@ -15,8 +15,7 @@ import sfeir.sds.petstore.entities.Category;
 import sfeir.sds.petstore.entities.Pet;
 
 /**
- * Ajout de commentaire pour tester
- * Et un nouveau commentaire
+ * Application that exposes the classes
  */
 @Configuration
 @ComponentScan
