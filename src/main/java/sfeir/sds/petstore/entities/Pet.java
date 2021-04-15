@@ -10,6 +10,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/**
+ * Regular pet like the one you have found
+ */
 @Entity
 @Table(name="pet")
 public class Pet implements Serializable {
